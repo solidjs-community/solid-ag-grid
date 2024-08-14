@@ -1,4 +1,4 @@
-import { CellCtrl, Component } from "ag-grid-community";
+import { CellCtrl, Component } from "@ag-grid-community/core";
 import { createMemo, onCleanup, Setter, useContext } from "solid-js";
 import { BeansContext } from "../core/beansContext";
 import UserComp from "../userComps/userComp";

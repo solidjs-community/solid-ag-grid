@@ -1,4 +1,4 @@
-import { UserCompDetails } from "ag-grid-community";
+import { UserCompDetails } from "@ag-grid-community/core";
 import { onCleanup } from "solid-js";
 
 const SolidUserComp = (props: { compDetails: UserCompDetails; ref?: any }) => {

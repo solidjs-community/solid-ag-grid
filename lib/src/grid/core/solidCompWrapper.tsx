@@ -1,4 +1,4 @@
-import { WrappableInterface } from "ag-grid-community";
+import { WrappableInterface } from "@ag-grid-community/core";
 import { PortalInfo, PortalManager } from "../agGridSolid";
 
 export default class SolidCompWrapper implements WrappableInterface {

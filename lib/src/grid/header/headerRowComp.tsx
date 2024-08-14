@@ -7,7 +7,7 @@ import {
   HeaderRowType,
   IHeaderRowComp,
   _,
-} from "ag-grid-community";
+} from "@ag-grid-community/core";
 import { createMemo, createSignal, For, onMount, useContext } from "solid-js";
 import { BeansContext } from "../core/beansContext";
 import HeaderCellComp from "./headerCellComp";

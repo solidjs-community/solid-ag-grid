@@ -1,4 +1,4 @@
-import { CellCtrl, ICellEditor } from "ag-grid-community";
+import { CellCtrl, ICellEditor } from "@ag-grid-community/core";
 import { createMemo } from "solid-js";
 import UserComp from "../userComps/userComp";
 import { EditDetails } from "./common";

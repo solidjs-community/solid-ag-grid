@@ -44,10 +44,11 @@
     "typecheck": "tsc --noEmit"
   },
   "peerDependencies": {
-    "@ag-grid-community/core": "^32.1.0",
+    "@ag-grid-community/core": "~31.1.1",
     "solid-js": ">=1.0.0"
   },
   "devDependencies": {
+    // "@ag-grid-community/core": "~31.1.1",
     "prettier": "3.2.5",
     "solid-js": ">=1.0.0",
     "typescript": "^5.4.4",
@@ -61,8 +62,5 @@
     "ag-grid-community",
     "ag-grid-solid"
   ],
-  "packageManager": "bun@1.1.22",
-  "dependencies": {
-    "snowpilot-solid-ag-grid": "."
-  }
+  "packageManager": "bun@1.1.22"
 }

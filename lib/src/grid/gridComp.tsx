@@ -1,4 +1,4 @@
-import { Context, FocusService, GridCtrl, IGridComp } from "ag-grid-community";
+import { Context, FocusService, GridCtrl, IGridComp } from "@ag-grid-community/core";
 import { createMemo, createSignal, onCleanup, onMount } from "solid-js";
 import { BeansContext } from "./core/beansContext";
 import { classesList } from "./core/utils";

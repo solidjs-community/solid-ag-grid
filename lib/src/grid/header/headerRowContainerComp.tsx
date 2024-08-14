@@ -3,7 +3,7 @@ import {
   HeaderRowContainerCtrl,
   HeaderRowCtrl,
   IHeaderRowContainerComp,
-} from "ag-grid-community";
+} from "@ag-grid-community/core";
 import {
   createEffect,
   createMemo,

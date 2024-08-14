@@ -1,4 +1,4 @@
-import { CellCtrl, PopupEditorWrapper } from "ag-grid-community";
+import { CellCtrl, PopupEditorWrapper } from "@ag-grid-community/core";
 import { JSX, onCleanup, useContext } from "solid-js";
 import { Portal } from "solid-js/web";
 import { BeansContext } from "../core/beansContext";
