@@ -1,5 +1,5 @@
 import { Component } from "solid-js";
-import { AgGridReact } from "snowpilot-solid-ag-grid";
+import AgGridReact from "snowpilot-solid-ag-grid";
 import "ag-grid-community/styles/ag-grid.css";
 import "ag-grid-community/styles/ag-theme-alpine.css";
 

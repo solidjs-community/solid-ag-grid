@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "preview": "vite preview",
-    "snowpilot-solid-ag-grid": "file:../dist"
+    "snowpilot-solid-ag-grid": "*"
   },
   "dependencies": {
     "solid-js": "^1.8.19"
