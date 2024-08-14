@@ -85,7 +85,9 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "ag-grid-community": "31.1.1"
+    "ag-grid-community": "31.1.1",
+    "gulp": "^5.0.0",
+    "gulp-replace": "^1.1.4"
   },
   "peerDependencies": {
     "solid-js": ">=1.0.0"
