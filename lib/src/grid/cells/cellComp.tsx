@@ -6,7 +6,7 @@ import {
   ICellEditor,
   ICellRenderer,
   _,
-} from "ag-grid-community";
+} from "@ag-grid-community/core";
 import { createEffect, createMemo, createSignal, For, onMount } from "solid-js";
 import { EditDetails, RenderDetails } from "./common";
 import ShowEditDetails from "./showEditDetails";

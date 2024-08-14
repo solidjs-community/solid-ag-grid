@@ -3,7 +3,7 @@ import {
   IDetailCellRenderer,
   IDetailCellRendererCtrl,
   IDetailCellRendererParams,
-} from "ag-grid-community";
+} from "@ag-grid-community/core";
 import { createMemo, createSignal, onMount, useContext } from "solid-js";
 import AgGridSolid, { AgGridSolidRef } from "../agGridSolid";
 import { BeansContext } from "../core/beansContext";

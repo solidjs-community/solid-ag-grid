@@ -1,4 +1,4 @@
-import { GridCtrl, ITabGuard, TabGuardClassNames, TabGuardCtrl } from "ag-grid-community";
+import { GridCtrl, ITabGuard, TabGuardClassNames, TabGuardCtrl } from "@ag-grid-community/core";
 import { createSignal, JSX, onCleanup, onMount, useContext } from "solid-js";
 import { BeansContext } from "./core/beansContext";
 

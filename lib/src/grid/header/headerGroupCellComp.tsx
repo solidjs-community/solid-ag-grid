@@ -1,4 +1,4 @@
-import { HeaderGroupCellCtrl, IHeaderGroupCellComp, UserCompDetails } from "ag-grid-community";
+import { HeaderGroupCellCtrl, IHeaderGroupCellComp, UserCompDetails } from "@ag-grid-community/core";
 import { createEffect, createMemo, createSignal, onMount } from "solid-js";
 import { CssClasses } from "../core/utils";
 import UserComp from "../userComps/userComp";

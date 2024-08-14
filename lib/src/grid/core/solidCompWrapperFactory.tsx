@@ -2,7 +2,7 @@ import {
   BaseComponentWrapper,
   FrameworkComponentWrapper,
   WrappableInterface,
-} from "ag-grid-community";
+} from "@ag-grid-community/core";
 import { PortalManager } from "../agGridSolid";
 import SolidCompWrapper from "./solidCompWrapper";
 

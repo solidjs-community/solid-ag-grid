@@ -1,4 +1,4 @@
-import { UserCompDetails } from "ag-grid-community";
+import { UserCompDetails } from "@ag-grid-community/core";
 
 export interface RenderDetails {
   compDetails: UserCompDetails | undefined;

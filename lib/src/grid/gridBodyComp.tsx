@@ -1,4 +1,4 @@
-import { GridBodyCtrl, IGridBodyComp, RowContainerName } from "ag-grid-community";
+import { GridBodyCtrl, IGridBodyComp, RowContainerName } from "@ag-grid-community/core";
 import { createMemo, createSignal, onCleanup, onMount, useContext } from "solid-js";
 import { BeansContext } from "./core/beansContext";
 import { classesList } from "./core/utils";

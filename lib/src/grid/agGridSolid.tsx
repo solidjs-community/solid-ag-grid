@@ -8,7 +8,7 @@ import {
   GridOptions,
   GridParams,
   Module,
-} from "ag-grid-community";
+} from "@ag-grid-community/core";
 import { createEffect, createSignal, For, onCleanup, onMount } from "solid-js";
 import { Portal } from "solid-js/web";
 import SolidCompWrapperFactory from "./core/solidCompWrapperFactory";

@@ -1,4 +1,4 @@
-import { VanillaFrameworkOverrides } from "ag-grid-community";
+import { VanillaFrameworkOverrides } from "@ag-grid-community/core";
 import DetailCellRenderer from "../cellRenderer/detailCellRenderer";
 import GroupCellRenderer from "../cellRenderer/groupCellRenderer";
 

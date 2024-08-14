@@ -1,4 +1,4 @@
-import { GridHeaderCtrl, IGridHeaderComp } from "ag-grid-community";
+import { GridHeaderCtrl, IGridHeaderComp } from "@ag-grid-community/core";
 import { createMemo, createSignal, onCleanup, onMount, useContext } from "solid-js";
 import { BeansContext } from "../core/beansContext";
 import { CssClasses } from "../core/utils";

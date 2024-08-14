@@ -4,7 +4,7 @@ import {
   RowContainerCtrl,
   RowContainerName,
   RowCtrl,
-} from "ag-grid-community";
+} from "@ag-grid-community/core";
 import {
   createEffect,
   createMemo,

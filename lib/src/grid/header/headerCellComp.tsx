@@ -5,7 +5,7 @@ import {
   IHeader,
   IHeaderCellComp,
   UserCompDetails,
-} from "ag-grid-community";
+} from "@ag-grid-community/core";
 import { createMemo, createSignal, onMount } from "solid-js";
 import UserComp from "../userComps/userComp";
 

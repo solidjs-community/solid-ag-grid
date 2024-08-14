@@ -1,4 +1,4 @@
-import { UserCompDetails } from "ag-grid-community";
+import { UserCompDetails } from "@ag-grid-community/core";
 import { createMemo } from "solid-js";
 import JsUserComp from "./jsUserComp";
 import SolidUserComp from "./solidUserComp";

@@ -4,7 +4,7 @@ import {
   IFloatingFilter,
   IHeaderFilterCellComp,
   UserCompDetails,
-} from "ag-grid-community";
+} from "@ag-grid-community/core";
 import { createMemo, createSignal, onMount } from "solid-js";
 import { CssClasses } from "../core/utils";
 import UserComp from "../userComps/userComp";

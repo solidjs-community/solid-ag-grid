@@ -4,7 +4,7 @@ import {
   IGroupCellRenderer,
   UserCompDetails,
   _,
-} from "ag-grid-community";
+} from "@ag-grid-community/core";
 import { createMemo, createSignal, onMount, useContext } from "solid-js";
 import { BeansContext } from "../core/beansContext";
 import { CssClasses } from "../core/utils";

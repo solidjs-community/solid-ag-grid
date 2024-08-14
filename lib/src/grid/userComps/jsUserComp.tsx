@@ -1,4 +1,4 @@
-import { UserCompDetails } from "ag-grid-community";
+import { UserCompDetails } from "@ag-grid-community/core";
 import { onCleanup, useContext } from "solid-js";
 import { BeansContext } from "../core/beansContext";
 
