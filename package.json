@@ -1,6 +1,6 @@
 {
   "name": "snowpilot-solid-ag-grid",
-  "version": "0.0.200",
+  "version": "31.1.1",
   "description": "AG Grid SolidJS Component",
   "license": "MIT",
   "author": "Ben Warren <ben@snowpilot.com>",
@@ -55,7 +55,11 @@
     "vite-plugin-solid": "^2.10.2"
   },
   "keywords": [
-    "solid"
+    "solid",
+    "solidJS",
+    "ag-grid",
+    "ag-grid-community",
+    "ag-grid-solid"
   ],
   "packageManager": "bun@1.1.22"
 }
