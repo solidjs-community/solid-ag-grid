@@ -78,18 +78,14 @@
   "scripts": {
     "dev": "vite serve dev",
     "clean": "rimraf bundles dist",
-    "build": "npx gulp && tsup",
-    "build-prod": "npm run build",
+    "build": "bun run gulp && bun run tsup",
+    "build-prod": "bun run build",
     "format": "prettier -w \"src/**/*.{js,ts,json,css,tsx,jsx}\" \"dev/**/*.{js,ts,json,css,tsx,jsx}\"",
-    "update-deps": "taze -w && pnpm i",
+    "update-deps": "taze -w && bun install",
     "typecheck": "tsc --noEmit"
   },
-  "dependencies": {
-    "ag-grid-community": "31.1.1",
-    "gulp": "^5.0.0",
-    "gulp-replace": "^1.1.4"
-  },
   "peerDependencies": {
+    "@ag-grid-community/core": "31.1.1",
     "solid-js": ">=1.0.0"
   },
   "devDependencies": {
@@ -102,12 +98,14 @@
     "tsup-preset-solid": "^2.2.0",
     "typescript": "^5.4.4",
     "vite": "^5.2.8",
-    "vite-plugin-solid": "^2.10.2"
+    "vite-plugin-solid": "^2.10.2",
+    "gulp": "^5.0.0",
+    "gulp-replace": "^1.1.4"
   },
   "keywords": [
     "solid"
   ],
-  "packageManager": "pnpm@7.5.0",
+  "packageManager": "bun@1.1.22",
   "browser": {
     "./dist/server.js": "./dist/index.js",
     "./dist/server.cjs": "./dist/index.cjs"
