@@ -20,7 +20,7 @@
     "dist"
   ],
   "scripts": {
-    "build": "bun build ./src/index.ts --outdir ./dist --target node",
+    "build": "bun build ./src/index.tsx --outdir ./dist --target node",
     "build:types": "tsc --emitDeclarationOnly",
     "build:all": "bun run build && bun run build:types"
   },

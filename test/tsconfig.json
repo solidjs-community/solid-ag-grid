@@ -20,7 +20,8 @@
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true
-  },
-  "include": ["src"]
+    "noFallthroughCasesInSwitch": true,
+
+    "types": ["vite/client"]
+  }
 }
