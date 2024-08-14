@@ -17,22 +17,11 @@
   "files": [
     "dist"
   ],
-  "main": "./dist/server.cjs",
-  "module": "./dist/server.js",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "exports": {
-    "worker": {
-      "solid": "./dist/server.jsx",
-      "import": {
-        "types": "./dist/index.d.ts",
-        "default": "./dist/server.js"
-      },
-      "require": {
-        "types": "./dist/index.d.cts",
-        "default": "./dist/server.cjs"
-      }
-    },
-    "browser": {
+    ".": {
       "solid": "./dist/index.jsx",
       "import": {
         "types": "./dist/index.d.ts",
@@ -42,46 +31,16 @@
         "types": "./dist/index.d.cts",
         "default": "./dist/index.cjs"
       }
-    },
-    "deno": {
-      "solid": "./dist/server.jsx",
-      "import": {
-        "types": "./dist/index.d.ts",
-        "default": "./dist/server.js"
-      },
-      "require": {
-        "types": "./dist/index.d.cts",
-        "default": "./dist/server.cjs"
-      }
-    },
-    "node": {
-      "solid": "./dist/server.jsx",
-      "import": {
-        "types": "./dist/index.d.ts",
-        "default": "./dist/server.js"
-      },
-      "require": {
-        "types": "./dist/index.d.cts",
-        "default": "./dist/server.cjs"
-      }
-    },
-    "solid": "./dist/index.jsx",
-    "import": {
-      "types": "./dist/index.d.ts",
-      "default": "./dist/index.js"
-    },
-    "require": {
-      "types": "./dist/index.d.cts",
-      "default": "./dist/index.cjs"
     }
   },
   "scripts": {
-    "dev": "vite serve dev",
-    "clean": "rimraf bundles dist",
-    "build": "bun run gulp && bun run tsup",
-    "build-prod": "bun run build",
+    "dev": "bun run --watch src/index.tsx",
+    "clean": "rm -rf dist",
+    "build": "bun run clean && bun build src/index.tsx --outdir=dist --target=node",
+    "build:types": "tsc --emitDeclarationOnly --outDir dist",
+    "build-prod": "bun run build && bun run build:types",
     "format": "prettier -w \"src/**/*.{js,ts,json,css,tsx,jsx}\" \"dev/**/*.{js,ts,json,css,tsx,jsx}\"",
-    "update-deps": "taze -w && bun install",
+    "update-deps": "bun update --latest",
     "typecheck": "tsc --noEmit"
   },
   "peerDependencies": {
@@ -91,22 +50,12 @@
   "devDependencies": {
     "prettier": "3.2.5",
     "solid-js": "^1.8.16",
-    "taze": "^0.7.6",
-    "tsup": "^8.0.2",
-    "tsup-preset-solid": "^2.2.0",
     "typescript": "^5.4.4",
     "vite": "^5.2.8",
-    "vite-plugin-solid": "^2.10.2",
-    "gulp": "^5.0.0",
-    "gulp-replace": "^1.1.4"
+    "vite-plugin-solid": "^2.10.2"
   },
   "keywords": [
     "solid"
   ],
-  "packageManager": "bun@1.1.22",
-  "browser": {
-    "./dist/server.js": "./dist/index.js",
-    "./dist/server.cjs": "./dist/index.cjs"
-  },
-  "typesVersions": {}
+  "packageManager": "bun@1.1.22"
 }
