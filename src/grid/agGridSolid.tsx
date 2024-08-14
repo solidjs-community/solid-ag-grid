@@ -62,7 +62,9 @@ const AgGridSolid = (props: AgGridSolidProps) => {
 
   createEffect(() => {
     const keys = Object.keys(props);
-    const changes: { [key: string]: { currentValue: any; previousValue: any } } = {};
+    const changes: {
+      [key: string]: { currentValue: any; previousValue: any };
+    } = {};
     let changesExist = false;
 
     keys.forEach((key) => {
@@ -103,14 +105,18 @@ const AgGridSolid = (props: AgGridSolidProps) => {
       frameworkOverrides: new SolidFrameworkOverrides(),
     };
 
-    const gridOptions = ComponentUtil.combineAttributesAndGridOptions(props.gridOptions, props);
+    const gridOptions = ComponentUtil.combineAttributesAndGridOptions(
+      props.gridOptions,
+      props
+    );
 
     const createUiCallback = (context: Context) => {
       setContext(context);
       // because React is Async, we need to wait for the UI to be initialised before exposing the API's
       const ctrlsService = context.getBean(CtrlsService.NAME) as CtrlsService;
       ctrlsService.whenReady(() => {
-        const refCallback = props.ref && (props.ref as (ref: AgGridSolidRef) => void);
+        const refCallback =
+          props.ref && (props.ref as (ref: AgGridSolidRef) => void);
         if (refCallback) {
           const gridRef: AgGridSolidRef = {
             api: api!,
@@ -132,13 +138,15 @@ const AgGridSolid = (props: AgGridSolidProps) => {
       gridOptions,
       createUiCallback,
       acceptChangesCallback,
-      gridParams,
+      gridParams
     );
   });
 
   return (
     <div ref={eGui!} style={{ height: "100%" }}>
-      {context() && <GridComp class={props.class} context={context()!}></GridComp>}
+      {context() && (
+        <GridComp class={props.class} context={context()!}></GridComp>
+      )}
       <For each={getPortals()}>
         {(info, i) => (
           <Portal mount={info.mount}>

@@ -1,23 +1,17 @@
 {
-  "name": "solid-ag-grid",
+  "name": "snowpilot-solid-ag-grid",
   "version": "0.0.200",
   "description": "AG Grid SolidJS Component",
   "license": "MIT",
-  "author": "Niall Crosby <niall.crosby@ag-grid.com>",
-  "contributors": [
-    {
-      "name": "David Di Biase",
-      "email": "dave.dibiase@gmail.com",
-      "url": "https://github.com/davedbase"
-    }
-  ],
+  "author": "Ben Warren <ben@snowpilot.com>",
+  "contributors": [],
   "repository": {
     "type": "git",
-    "url": "https://github.com/solidjs-community/solid-ag-grid"
+    "url": "https://github.com/warrenbhw/solid-ag-grid"
   },
-  "homepage": "https://github.com/solidjs-community/solid-ag-grid",
+  "homepage": "https://github.com/warrenbhw/solid-ag-grid",
   "bugs": {
-    "url": "https://github.com/solidjs-community/solid-ag-grid/issues"
+    "url": "https://github.com/warrenbhw/solid-ag-grid/issues"
   },
   "type": "module",
   "files": [
