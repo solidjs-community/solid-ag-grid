@@ -13,7 +13,17 @@
     "url": "https://github.com/warrenbhw/solid-ag-grid/issues"
   },
   "type": "module",
-  "module": "src/index.ts",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "bun build ./src/index.ts --outdir ./dist --target node",
+    "build:types": "tsc --emitDeclarationOnly",
+    "build:all": "bun run build && bun run build:types"
+  },
   "peerDependencies": {
     "@ag-grid-community/core": "~31.1.1",
     "solid-js": ">=1.0.0"
@@ -21,6 +31,7 @@
   "devDependencies": {
     "@ag-grid-community/core": "~31.1.1",
     "solid-js": ">=1.0.0",
-    "typescript": "^5.4.4"
+    "typescript": "^5.4.4",
+    "bun-types": "latest"
   }
 }

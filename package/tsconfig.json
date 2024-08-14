@@ -1,20 +1,18 @@
 {
   "compilerOptions": {
     "forceConsistentCasingInFileNames": true,
-    "strict": true,
     "target": "ESNext",
     "module": "ESNext",
-    "lib": ["DOM", "DOM.Iterable", "ESNext"],
     "moduleResolution": "node",
-    "allowSyntheticDefaultImports": true,
-    "resolveJsonModule": true,
     "esModuleInterop": true,
+    "strict": true,
+    "skipLibCheck": true,
     "jsx": "preserve",
     "jsxImportSource": "solid-js",
-    "noEmit": true,
-    "isolatedModules": true,
-    "skipLibCheck": true,
+    "types": ["bun-types"],
+    "outDir": "./dist",
+    "declaration": true
   },
-  "include": ["src"],
+  "include": ["src/**/*"],
   "exclude": ["node_modules", "dist"]
 }
