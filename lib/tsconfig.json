@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "forceConsistentCasingInFileNames": true,
     "strict": true,
     "target": "ESNext",
     "module": "ESNext",
@@ -17,5 +18,5 @@
     "baseUrl": "."
   },
   "include": ["src"],
-  "exclude": ["node_modules", "dist"]
+  "exclude": ["node_modules", "dist", "example"]
 }
