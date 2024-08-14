@@ -71,7 +71,7 @@ pnpm add ag-grid-community solid-ag-grid
 
 ```ts
 import type { Component } from "solid-js";
-import AgGridSolid from "ag-grid-solid";
+import AgGridSolid from "solid-ag-grid";
 
 import "ag-grid-community/styles/ag-grid.css";
 import "ag-grid-community/styles/ag-theme-alpine.css";
@@ -122,7 +122,7 @@ Once the Solid grid component is imported, it can then be inserted into the Soli
 It's best to place the grid component inside another DOM element that has a set size. The grid will then fill the size of the parent element. You also need to import CSS files for a) the core CSS which is mandatory and b) a grid theme which is optional. The theme also needs to be specified as a CSS class in a parent element to the grid.
 
 ```jsx
-import AgGridSolid from 'ag-grid-solid';
+import AgGridSolid from 'solid-ag-grid';
 
 import 'ag-grid-community/styles/ag-grid.css'; // grid core CSS
 import "ag-grid-community/styles/ag-theme-quartz.css"; // optional theme
@@ -146,7 +146,7 @@ const MySolidApp = ()=> {
 You can use [Grid Properties](./grid-options/), either bind Solid Signals (for changing properties) or directly (if static properties). [Grid Events](./grid-events/) are also bound via properties.
 
 ```jsx
-import AgGridSolid from "ag-grid-solid";
+import AgGridSolid from "solid-ag-grid";
 
 import "ag-grid-community/styles/ag-grid.css"; // grid core CSS
 import "ag-grid-community/styles/ag-theme-quartz.css"; // optional theme
@@ -202,7 +202,7 @@ const MySolidApp = ()=> {
 If using TypeScript, the type to use is `AgGridSolidRef`.
 
 ```jsx
-import AgGridSolid, {AgGridSolidRef} from 'ag-grid-solid';
+import AgGridSolid, {AgGridSolidRef} from 'solid-ag-grid';
 
 const MySolidApp = ()=> {
   let grid: AgGridSolidRef;
