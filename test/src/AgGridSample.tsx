@@ -1,5 +1,5 @@
 import { Component } from "solid-js";
-import AgGridReact from "snowpilot-solid-ag-grid";
+import AgGridSolid from "@warrenbhw/solid-ag-grid";
 import "ag-grid-community/styles/ag-grid.css";
 import "ag-grid-community/styles/ag-theme-alpine.css";
 
@@ -18,7 +18,7 @@ const AgGridSample: Component = () => {
 
   return (
     <div class="ag-theme-alpine" style="height: 400px; width: 600px;">
-      <AgGridReact columnDefs={columnDefs} rowData={rowData}></AgGridReact>
+      <AgGridSolid columnDefs={columnDefs} rowData={rowData}/>
     </div>
   );
 };

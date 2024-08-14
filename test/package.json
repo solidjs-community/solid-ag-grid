@@ -6,11 +6,11 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
-    "preview": "vite preview",
-    "snowpilot-solid-ag-grid": "*"
+    "preview": "vite preview"
   },
   "dependencies": {
-    "solid-js": "^1.8.19"
+    "solid-js": "^1.8.19",
+    "@warrenbhw/solid-ag-grid": "link:@warrenbhw/solid-ag-grid"
   },
   "devDependencies": {
     "typescript": "^5.5.3",
