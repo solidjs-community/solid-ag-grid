@@ -10,7 +10,9 @@
   },
   "dependencies": {
     "solid-js": "^1.8.19",
-    "@warrenbhw/solid-ag-grid": "link:@warrenbhw/solid-ag-grid"
+    "@warrenbhw/solid-ag-grid": "link:@warrenbhw/solid-ag-grid",
+    "@ag-grid-community/core": "~31.1.0",
+    "@ag-grid-community/styles": "~31.1.0"
   },
   "devDependencies": {
     "typescript": "^5.5.3",

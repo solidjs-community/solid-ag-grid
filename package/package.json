@@ -13,10 +13,7 @@
     "url": "https://github.com/warrenbhw/solid-ag-grid/issues"
   },
   "type": "module",
-  "module": "./src/index.tsx",
-  "scripts": {
-    "dev": "bun run --watch src/index.tsx"
-  },
+  "module": "src/index.ts",
   "peerDependencies": {
     "@ag-grid-community/core": "~31.1.1",
     "solid-js": ">=1.0.0"
