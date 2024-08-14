@@ -89,8 +89,6 @@
     "solid-js": ">=1.0.0"
   },
   "devDependencies": {
-    "ag-grid-community": "31.1.1",
-    "ag-grid-enterprise": "31.1.1",
     "prettier": "3.2.5",
     "solid-js": "^1.8.16",
     "taze": "^0.7.6",
