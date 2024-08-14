@@ -7,7 +7,7 @@ import {
   RowCtrl,
   RowStyle,
   UserCompDetails,
-} from "ag-grid-community";
+} from "@ag-grid-community/core";
 import { createEffect, createMemo, createSignal, For, onCleanup, onMount } from "solid-js";
 import CellComp from "../cells/cellComp";
 import UserComp from "../userComps/userComp";

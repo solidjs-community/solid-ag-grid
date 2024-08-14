@@ -44,12 +44,12 @@
     "typecheck": "tsc --noEmit"
   },
   "peerDependencies": {
-    "@ag-grid-community/core": "31.1.1",
+    "@ag-grid-community/core": "^32.1.0",
     "solid-js": ">=1.0.0"
   },
   "devDependencies": {
     "prettier": "3.2.5",
-    "solid-js": "^1.8.16",
+    "solid-js": ">=1.0.0",
     "typescript": "^5.4.4",
     "vite": "^5.2.8",
     "vite-plugin-solid": "^2.10.2"
@@ -61,5 +61,8 @@
     "ag-grid-community",
     "ag-grid-solid"
   ],
-  "packageManager": "bun@1.1.22"
+  "packageManager": "bun@1.1.22",
+  "dependencies": {
+    "snowpilot-solid-ag-grid": "."
+  }
 }
