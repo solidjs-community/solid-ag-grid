@@ -1,1 +1,4 @@
-export class PortalManager {}
+
+export class PortalManager {
+
+}
