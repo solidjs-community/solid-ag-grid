@@ -24,6 +24,7 @@ const App: Component = () => {
 
     return (
         <div class="ag-theme-alpine" style={{height: "100%"}}>
+            <h1>AG Grid Solid Test</h1>
             <AgGridSolid
                 columnDefs={columnDefs}
                 rowData={rowData}
