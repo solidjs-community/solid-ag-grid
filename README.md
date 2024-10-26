@@ -2,6 +2,8 @@
   <img width="100%" src="https://assets.solidjs.com/banner?background=tiles&project=solid-ag-grid" alt="solid-ag-grid">
 </p>
 
+Note: this proejct doesn't currbrtky hsve an active maintainer. If you have an interest in leading or pariticipatibg please join Solid Discord to inquire.
+
 ## AG Grid Solid Component
 
 Solid AG Grid is a fully-featured and highly customizable JavaScript data grid.
