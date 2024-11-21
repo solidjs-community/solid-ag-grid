@@ -120,8 +120,8 @@ const GridBodyComp = () => {
   );
 
   const getTopStyle: any = createMemo(() => ({
-    height: getTopHeight(),
-    "min-height": getTopHeight(),
+    height: `${getTopHeight()}px`,
+    "min-height": `${getTopHeight()}px`,
     display: getTopDisplay(),
     "overflow-y": getTopAndBottomOverflowY(),
   }));
@@ -133,8 +133,8 @@ const GridBodyComp = () => {
   }));
 
   const getBottomStyle: any = createMemo(() => ({
-    height: getBottomHeight(),
-    "min-height": getBottomHeight(),
+    height: `${getBottomHeight()}px`,
+    "min-height": `${getBottomHeight()}px`,
     display: getBottomDisplay(),
     "overflow-y": getTopAndBottomOverflowY(),
   }));
