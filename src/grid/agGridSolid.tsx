@@ -15,15 +15,15 @@ import SolidCompWrapperFactory from "./core/solidCompWrapperFactory";
 import { SolidFrameworkOverrides } from "./core/solidFrameworkOverrides";
 import GridComp from "./gridComp";
 
-export interface AgGridSolidRef {
-  api: GridApi;
+export interface AgGridSolidRef<TData = any> {
+  api: GridApi<TData>;
   /** @deprecated v31 - The `columnApi` has been deprecated and all the methods are now present of the `api`. */
   columnApi: ColumnApi;
 }
 
-export interface AgGridSolidProps extends GridOptions {
-  gridOptions?: GridOptions;
-  ref?: AgGridSolidRef | ((ref: AgGridSolidRef) => void);
+export interface AgGridSolidProps<TData = any> extends GridOptions<TData> {
+  gridOptions?: GridOptions<TData>;
+  ref?: AgGridSolidRef<TData> | ((ref: AgGridSolidRef<TData>) => void);
   modules?: Module[];
   class?: string;
 }
@@ -41,7 +41,7 @@ export interface PortalManager {
   removePortal(info: PortalInfo): void;
 }
 
-const AgGridSolid = (props: AgGridSolidProps) => {
+const AgGridSolid = function<TData = any>(props: AgGridSolidProps<TData>) {
   let eGui: HTMLDivElement;
   let api: GridApi;
 
