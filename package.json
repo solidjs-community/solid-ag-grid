@@ -1,6 +1,6 @@
 {
   "name": "solid-ag-grid",
-  "version": "0.0.200",
+  "version": "0.0.230",
   "description": "AG Grid SolidJS Component",
   "license": "MIT",
   "author": "Niall Crosby <niall.crosby@ag-grid.com>",
@@ -84,7 +84,7 @@
   "scripts": {
     "dev": "vite serve dev",
     "clean": "rimraf bundles dist",
-    "build": "npx gulp && tsup",
+    "build": "tsup",
     "build-prod": "npm run build",
     "format": "prettier -w \"src/**/*.{js,ts,json,css,tsx,jsx}\" \"dev/**/*.{js,ts,json,css,tsx,jsx}\"",
     "update-deps": "taze -w && pnpm i",
