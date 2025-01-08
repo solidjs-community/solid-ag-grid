@@ -1,3 +1,5 @@
+import { Accessor, createMemo, on } from "solid-js";
+
 export const classesList = (...list: (string | null | undefined)[]): string => {
   const filtered = list.filter((s) => s != null && s !== "");
 
@@ -44,6 +46,41 @@ export const isComponentStateless = (Component: any) => {
       !(Component.prototype && Component.prototype.isReactComponent)) ||
     (typeof Component === "object" && Component.$$typeof === getMemoType())
   );
+};
+
+/**
+ * Memoizes the props of an object
+ * @param obj The object to memoize
+ * @returns A reactive {@link Accessor} that gets updated when properties get added/removed from {@link obj}
+ */
+export const memoObj = <T extends object>(obj: T): Accessor<T> => {
+  const keys = createMemo(
+    () => Object.keys(obj) as (string & keyof T)[],
+    undefined,
+    { equals: compareList },
+  );
+  return createMemo(
+    on(keys, (list) => {
+      const out: T = {} as any;
+      for (const key of list) {
+        Object.defineProperty(out, key, {
+          enumerable: true,
+          configurable: true,
+          get: createMemo(() => obj[key]),
+        });
+      }
+      return out;
+    }),
+  );
+};
+
+/**
+ * Checks whether two lists are equals
+ * @param prev The previous list
+ * @param next The next list
+ */
+const compareList = <T,>(prev: T[], next: T[]) => {
+  return prev.length === next.length && prev.every((x, i) => x === next[i]);
 };
 
 export interface RefPointer<T> {
