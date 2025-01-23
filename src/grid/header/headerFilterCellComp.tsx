@@ -23,10 +23,10 @@ const HeaderFilterCellComp = (props: { ctrl: HeaderFilterCellCtrl }) => {
     UserCompDetails | null | undefined
   >();
 
-  let eGui: HTMLDivElement;
-  let eFloatingFilterBody: HTMLDivElement;
-  let eButtonWrapper: HTMLDivElement;
-  let eButtonShowMainFilter: HTMLButtonElement;
+  let eGui!: HTMLDivElement;
+  let eFloatingFilterBody!: HTMLDivElement;
+  let eButtonWrapper!: HTMLDivElement;
+  let eButtonShowMainFilter!: HTMLButtonElement;
 
   let alreadyResolved = false;
   let userCompResolve: (value: IFloatingFilter) => void;

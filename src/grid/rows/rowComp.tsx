@@ -86,7 +86,7 @@ const RowComp = (params: { rowCtrl: RowCtrl; containerType: RowContainerType }) 
     rowCtrl.getInitialTransform(containerType),
   );
 
-  let eGui: HTMLDivElement;
+  let eGui!: HTMLDivElement;
   let fullWidthCompRef: ICellRenderer;
 
   const setFullWidthRef = (newRef: ICellRenderer) => {

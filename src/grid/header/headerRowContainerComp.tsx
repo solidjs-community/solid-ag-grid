@@ -25,7 +25,7 @@ const HeaderRowContainerComp = (props: { pinned: ColumnPinnedType | null }) => {
   const [getHeaderRowCtrls, setHeaderRowCtrls] = createSignal<HeaderRowCtrl[]>([]);
 
   const { context } = useContext(BeansContext);
-  let eGui: HTMLDivElement;
+  let eGui!: HTMLDivElement;
 
   const pinnedLeft = props.pinned === "left";
   const pinnedRight = props.pinned === "right";

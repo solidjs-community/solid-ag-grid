@@ -17,9 +17,9 @@ const HeaderCellComp = (props: { ctrl: HeaderCellCtrl }) => {
   const [getAriaSort, setAriaSort] = createSignal<ColumnSortState>();
   const [getUserCompDetails, setUserCompDetails] = createSignal<UserCompDetails>();
 
-  let eGui: HTMLDivElement;
-  let eResize: HTMLDivElement;
-  let eHeaderCompWrapper: HTMLDivElement;
+  let eGui!: HTMLDivElement;
+  let eResize!: HTMLDivElement;
+  let eHeaderCompWrapper!: HTMLDivElement;
 
   let userComp: IHeader | undefined;
 

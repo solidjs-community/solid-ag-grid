@@ -25,8 +25,8 @@ const TabGuardComp = (props: TabGuardProps) => {
   } = props;
   const [tabIndex, setTabIndex] = createSignal<number>();
 
-  let eTopGuard: HTMLDivElement;
-  let eBottomGuard: HTMLDivElement;
+  let eTopGuard!: HTMLDivElement;
+  let eBottomGuard!: HTMLDivElement;
   let ctrl: TabGuardCtrl;
 
   const { context } = useContext(BeansContext);

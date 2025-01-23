@@ -25,7 +25,7 @@ const DetailCellRenderer = (props: IDetailCellRendererParams) => {
   const [getDetailRowData, setDetailRowData] = createSignal<any[]>();
 
   let ctrl: IDetailCellRendererCtrl;
-  let eGuiRef: HTMLDivElement;
+  let eGuiRef!: HTMLDivElement;
 
   const getCssClassesStr = createMemo(() => getCssClasses().toString() + " ag-details-row");
   const getGridCssClassesStr = createMemo(

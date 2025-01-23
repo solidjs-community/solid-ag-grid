@@ -9,7 +9,7 @@ const GridHeaderComp = () => {
   const [getHeight, setHeight] = createSignal<string>();
 
   const { context } = useContext(BeansContext);
-  let eGui: HTMLDivElement;
+  let eGui!: HTMLDivElement;
 
   const destroyFuncs: (() => void)[] = [];
   onCleanup(() => {

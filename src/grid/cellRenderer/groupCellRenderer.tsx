@@ -13,11 +13,11 @@ import UserComp from "../userComps/userComp";
 const GroupCellRenderer = (props: GroupCellRendererParams) => {
   const context = useContext(BeansContext).context!;
 
-  let eGui: HTMLElement;
-  let eValueRef: HTMLElement;
-  let eCheckboxRef: HTMLElement;
-  let eExpandedRef: HTMLElement;
-  let eContractedRef: HTMLElement;
+  let eGui!: HTMLElement;
+  let eValueRef!: HTMLElement;
+  let eCheckboxRef!: HTMLElement;
+  let eExpandedRef!: HTMLElement;
+  let eContractedRef!: HTMLElement;
   let role: any = "gridcell";
 
   const [getInnerCompDetails, setInnerCompDetails] = createSignal<UserCompDetails>();

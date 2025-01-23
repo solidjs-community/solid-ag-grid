@@ -36,12 +36,12 @@ const GridBodyComp = () => {
   // problem as the UI will finish initialising before we set data.
   const [getLayoutClass, setLayoutClass] = createSignal<string>("ag-layout-normal");
 
-  let eRoot: HTMLDivElement;
-  let eTop: HTMLDivElement;
-  let eStickyTop: HTMLDivElement;
-  let eBody: HTMLDivElement;
-  let eBodyViewport: HTMLDivElement;
-  let eBottom: HTMLDivElement;
+  let eRoot!: HTMLDivElement;
+  let eTop!: HTMLDivElement;
+  let eStickyTop!: HTMLDivElement;
+  let eBody!: HTMLDivElement;
+  let eBodyViewport!: HTMLDivElement;
+  let eBottom!: HTMLDivElement;
 
   const destroyFuncs: (() => void)[] = [];
   onCleanup(() => {
