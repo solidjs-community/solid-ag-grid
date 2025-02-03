@@ -29,8 +29,8 @@ const RowContainerComp = (props: { name: RowContainerName }) => {
   const { name } = props;
   const containerType = createMemo(() => getRowContainerTypeForName(name));
 
-  let eViewport: HTMLDivElement;
-  let eContainer: HTMLDivElement;
+  let eViewport!: HTMLDivElement;
+  let eContainer!: HTMLDivElement;
 
   const cssClasses = createMemo(() => RowContainerCtrl.getRowContainerCssClasses(name));
   const viewportClasses = createMemo(() => classesList(cssClasses().viewport));

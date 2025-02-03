@@ -22,8 +22,8 @@ const GridComp = (props: { context: Context; class?: string }) => {
     tabGuardRef && tabGuardReady();
   };
 
-  let eGui: HTMLDivElement;
-  let eBody: HTMLDivElement;
+  let eGui!: HTMLDivElement;
+  let eBody!: HTMLDivElement;
   let gridCtrl: GridCtrl;
 
   const onTabKeyDown = () => undefined;
@@ -151,7 +151,7 @@ const GridComp = (props: { context: Context; class?: string }) => {
   }));
 
   return (
-    <div ref={eGui!} class={cssClasses()} style={topStyle()}>
+    <div ref={eGui} class={cssClasses()} style={topStyle()}>
       <div class={bodyCssClasses()} ref={eBody!}>
         {initialised() && (
           // we wait for initialised before rending the children, so GridComp has created and registered with it's

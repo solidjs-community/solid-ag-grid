@@ -7,7 +7,7 @@ import {
   ICellRenderer,
   _,
 } from "ag-grid-community";
-import { createEffect, createMemo, createSignal, For, onMount } from "solid-js";
+import { createEffect, createMemo, createSignal, For, JSX, onMount } from "solid-js";
 import { EditDetails, RenderDetails } from "./common";
 import ShowEditDetails from "./showEditDetails";
 import ShowRenderDetails from "./showRenderDetails";
@@ -57,16 +57,16 @@ const CellComp = (props: { cellCtrl: CellCtrl; printLayout: boolean; editingRow:
 
   const forceWrapper = cellCtrl.isForceWrapper();
 
-  let eCellWrapper: HTMLDivElement;
-  let eCellValue: HTMLElement;
+  let eGui!: HTMLDivElement;
+  let eCellWrapper!: HTMLDivElement;
+  let eCellValue!: HTMLElement;
+  let cellRenderer: ICellRenderer | null = null;
+  let cellEditor: ICellEditor | null = null;
+
   const setECellValue = (val: HTMLElement) => {
     eCellValue = val;
   };
-
-  let eGui: HTMLDivElement;
-  let cellRenderer: ICellRenderer | null = null;
-
-  let cellEditor: ICellEditor | null = null;
+ 
   const setEditorRef = (popup: boolean, ref: ICellEditor) => {
     cellEditor = ref;
     if (!cellEditor) {
@@ -161,8 +161,10 @@ const CellComp = (props: { cellCtrl: CellCtrl; printLayout: boolean; editingRow:
 
   // we only do refreshing for JS Comps. for SolidJS, the props will change for the cell renderer.
   let readyForRefresh = false;
+
   createEffect(() => {
     const details = renderDetails();
+
     const isJsCellRenderer =
       details != null && details.compDetails != null && !details.compDetails.componentFromFramework;
     if (!isJsCellRenderer) {
@@ -179,7 +181,8 @@ const CellComp = (props: { cellCtrl: CellCtrl; printLayout: boolean; editingRow:
     }
 
     const params = details.compDetails!.params;
-    const result = cellRenderer.refresh ? cellRenderer.refresh(params) : false;
+    const result = "refresh" in cellRenderer? (cellRenderer as ICellRenderer).refresh(params) : false;
+
     if (result != true) {
       // increasing the render key forces a new instance of ShowRenderDetails,
       // as we iteration through renderCompVersion, if the contents of
@@ -235,7 +238,7 @@ const CellComp = (props: { cellCtrl: CellCtrl; printLayout: boolean; editingRow:
       ref={eGui!}
       style={userStyles()}
       tabIndex={tabIndex()}
-      role={cellCtrl.getCellAriaRole()}
+      role={cellCtrl.getCellAriaRole() as JSX.AriaAttributes["role"]}
       col-id={colId()}
     >
       {" "}
