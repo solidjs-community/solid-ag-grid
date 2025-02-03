@@ -1,5 +1,6 @@
 import { defineConfig } from 'tsup'
 import * as preset from 'tsup-preset-solid'
+import pkg from './package.json'
 
 const preset_options: preset.PresetOptions = {
   entries: [
@@ -14,11 +15,23 @@ const preset_options: preset.PresetOptions = {
 
 export default defineConfig(config => {
   const watching = !!config.watch
-  const parsed_data = preset.parsePresetOptions(preset_options, watching)
+  const parsedOptions = preset.parsePresetOptions(preset_options, watching)
+
   if (!watching) {
-    const package_fields = preset.generatePackageExports(parsed_data)
+    const package_fields = preset.generatePackageExports(parsedOptions)
     console.log(`\npackage.json: \n${JSON.stringify(package_fields, null, 2)}\n\n`)
     preset.writePackageJson(package_fields)
   }
-  return preset.generateTsupOptions(parsed_data)
-})
+
+  const tsupOptions = preset
+    .generateTsupOptions(parsedOptions)
+    .map((tsupOption) => ({
+      ...tsupOption,
+      name: pkg.name,
+      dts: !tsupOption.dts ? undefined : {
+        footer: `declare module '${pkg.name}'`,
+      },
+    }));
+
+  return tsupOptions;
+});
