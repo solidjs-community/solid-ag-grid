@@ -54,11 +54,9 @@ export const isComponentStateless = (Component: any) => {
  * @returns A reactive {@link Accessor} that gets updated when properties get added/removed from {@link obj}
  */
 export const memoObj = <T extends object>(obj: T): Accessor<T> => {
-  const keys = createMemo(
-    () => Object.keys(obj) as (string & keyof T)[],
-    undefined,
-    { equals: compareList },
-  );
+  const keys = createMemo(() => Object.keys(obj) as (string & keyof T)[], undefined, {
+    equals: compareList,
+  });
   return createMemo(
     on(keys, (list) => {
       const out: T = {} as any;

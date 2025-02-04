@@ -86,7 +86,8 @@
     "clean": "rimraf bundles dist",
     "build": "tsup",
     "build-prod": "npm run build",
-    "format": "prettier -w \"src/**/*.{js,ts,json,css,tsx,jsx}\" \"dev/**/*.{js,ts,json,css,tsx,jsx}\"",
+    "format": "prettier . --check",
+    "format:fix": "prettier . --write",
     "update-deps": "taze -w && pnpm i",
     "typecheck": "tsc --noEmit"
   },
@@ -111,7 +112,7 @@
   "keywords": [
     "solid"
   ],
-  "packageManager": "pnpm@9.0.0",
+  "packageManager": "pnpm@10.2.0",
   "browser": {
     "./dist/server.js": "./dist/index.js",
     "./dist/server.cjs": "./dist/index.cjs"

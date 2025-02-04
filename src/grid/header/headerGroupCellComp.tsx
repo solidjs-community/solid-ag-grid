@@ -1,4 +1,9 @@
-import { HeaderGroupCellCtrl, IHeaderGroupCellComp, IHeaderGroupComp, UserCompDetails } from "ag-grid-community";
+import {
+  HeaderGroupCellCtrl,
+  IHeaderGroupCellComp,
+  IHeaderGroupComp,
+  UserCompDetails,
+} from "ag-grid-community";
 import { createEffect, createMemo, createSignal, onMount } from "solid-js";
 import { CssClasses } from "../core/utils";
 import UserComp from "../userComps/userComp";
@@ -30,7 +35,7 @@ const HeaderGroupCellComp = (props: { ctrl: HeaderGroupCellCtrl }) => {
         setResizableAriaHidden(!displayed ? "true" : "false");
       },
       setAriaExpanded: (expanded) => setAriaExpanded(expanded),
-      getUserCompInstance: () => userCompRef
+      getUserCompInstance: () => userCompRef,
     };
 
     ctrl.setComp(compProxy, eGui, eResize);
@@ -65,11 +70,7 @@ const HeaderGroupCellComp = (props: { ctrl: HeaderGroupCellCtrl }) => {
       aria-expanded={getAriaExpanded()}
     >
       {getUserCompDetails() && <UserComp compDetails={getUserCompDetails()!} ref={userCompRef} />}
-      <div
-        ref={eResize!}
-        aria-hidden={getResizableAriaHidden()}
-        class={getResizableClassName()}
-      />
+      <div ref={eResize!} aria-hidden={getResizableAriaHidden()} class={getResizableClassName()} />
     </div>
   );
 };

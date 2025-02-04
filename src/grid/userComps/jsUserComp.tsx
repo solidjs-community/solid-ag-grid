@@ -6,11 +6,13 @@ const JsUserComp = (p: { compDetails: UserCompDetails; ref?: (ref: any) => void 
   const { context } = useContext(BeansContext);
 
   const promise = p.compDetails.newAgStackInstance();
+
   if (!promise) {
     return <></>;
   }
 
   const comp = promise.resolveNow(null, (x: any) => x); // js comps are never async
+
   if (!comp) {
     return <></>;
   }
