@@ -9,7 +9,7 @@ import {
   GridParams,
   Module,
 } from "ag-grid-community";
-import { createEffect, createSignal, For, onCleanup, onMount } from "solid-js";
+import { createEffect, createSignal, For, onCleanup, onMount, Show } from "solid-js";
 import { Portal } from "solid-js/web";
 import SolidCompWrapperFactory from "./core/solidCompWrapperFactory";
 import { SolidFrameworkOverrides } from "./core/solidFrameworkOverrides";
@@ -38,13 +38,12 @@ export interface PortalInfo {
 
 export interface PortalManager {
   addPortal(info: PortalInfo): void;
-
   removePortal(info: PortalInfo): void;
 }
 
 const AgGridSolid = function <TData = any>(props: AgGridSolidProps<TData>) {
-  let eGui: HTMLDivElement;
-  let api: GridApi;
+  let eGui!: HTMLDivElement;
+  let api!: GridApi<TData>;
 
   const [context, setContext] = createSignal<Context>();
   const [getPortals, setPortals] = createSignal<PortalInfo[]>([]);
@@ -75,26 +74,23 @@ const AgGridSolid = function <TData = any>(props: AgGridSolidProps<TData>) {
       frameworkOverrides: new SolidFrameworkOverrides(),
     };
 
-    const gridOptions = ComponentUtil.combineAttributesAndGridOptions(
-      props.gridOptions,
-      props,
-    );
+    const gridOptions = ComponentUtil.combineAttributesAndGridOptions(props.gridOptions, props);
 
     const createUiCallback = (context: Context) => {
       setContext(context);
       // because React is Async, we need to wait for the UI to be initialised before exposing the API's
       const ctrlsService = context.getBean(CtrlsService.NAME) as CtrlsService;
+
       ctrlsService.whenReady(() => {
-        const refCallback =
-          props.ref && (props.ref as (ref: AgGridSolidRef) => void);
+        const refCallback = props.ref && (props.ref as (ref: AgGridSolidRef<TData>) => void);
         if (refCallback) {
-          const gridRef: AgGridSolidRef = {
-            api: api!,
-            columnApi: new ColumnApi(api!),
+          const gridRef: AgGridSolidRef<TData> = {
+            api,
+            columnApi: new ColumnApi(api),
           };
           refCallback(gridRef);
         }
-        destroyFuncs.push(() => api!.destroy());
+        destroyFuncs.push(() => api.destroy());
       });
     };
 
@@ -104,7 +100,6 @@ const AgGridSolid = function <TData = any>(props: AgGridSolidProps<TData>) {
 
     const gridCoreCreator = new GridCoreCreator();
     api = gridCoreCreator.create(
-      // @ts-ignore
       eGui,
       gridOptions,
       createUiCallback,
@@ -144,17 +139,17 @@ const AgGridSolid = function <TData = any>(props: AgGridSolidProps<TData>) {
     });
 
     if (changesExist) {
-      ComponentUtil.processOnChange(changes, api!);
+      ComponentUtil.processOnChange(changes, api);
     }
   });
 
   return (
-    <div ref={eGui!} style={{ height: "100%" }}>
-      {context() && (
-        <GridComp class={props.class} context={context()!}></GridComp>
-      )}
+    <div ref={eGui} style={{ height: "100%" }}>
+      <Show when={context()}>
+        <GridComp class={props.class} context={context()!} />
+      </Show>
       <For each={getPortals()}>
-        {(info, i) => (
+        {(info) => (
           <Portal mount={info.mount}>
             <info.SolidClass {...info.props} ref={info.ref} />
           </Portal>

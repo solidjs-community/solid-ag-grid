@@ -66,7 +66,7 @@ const CellComp = (props: { cellCtrl: CellCtrl; printLayout: boolean; editingRow:
   const setECellValue = (val: HTMLElement) => {
     eCellValue = val;
   };
- 
+
   const setEditorRef = (popup: boolean, ref: ICellEditor) => {
     cellEditor = ref;
     if (!cellEditor) {
@@ -181,7 +181,8 @@ const CellComp = (props: { cellCtrl: CellCtrl; printLayout: boolean; editingRow:
     }
 
     const params = details.compDetails!.params;
-    const result = "refresh" in cellRenderer? (cellRenderer as ICellRenderer).refresh(params) : false;
+    const result =
+      "refresh" in cellRenderer ? (cellRenderer as ICellRenderer).refresh(params) : false;
 
     if (result != true) {
       // increasing the render key forces a new instance of ShowRenderDetails,
